@@ -16,54 +16,73 @@ html {
 
 body {
   font-family: sans-serif;
+  background-color: white;
 }
 
 /* --- Header --- */
 
 header {
-  background-image: url("Images/monitor.png");
+  background-image: url("Images/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 52vw;
-  height: 100vh;
-  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100vh;
+  min-height: 100vh;
   text-align: center;
 }
 
 #header-content{
-  font-size: 1.5vw;
-  padding-bottom:15vw;
+  font-size: 2vw;
 }
 
 #title {
-  color: #181D27;
+  color: whitesmoke;
   font-weight: bold;
-}
-
-#sub-title-1 {
-  color: #96ACB7;
+  padding-top: 4.5vh;
+  font-family: serif;
 }
 
 #sub-title-2 {
+  font-family: ariel;
   font-weight: normal;
-  color: grey;
+  font-size: 1.5vw;
+  color: silver;
 }
 
 #typed-words {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 1.3vw;
   font-weight: lighter;
+}
+
+/* -- Header Media queries - Responsive on screens less than 900px wide -- */
+
+@media screen and (max-width: 900px) {
+
+  #title {
+    font-size: 6vw;
+}
+
+#sub-title-2 {
+  font-size: 3vw;
+}
+
+#typed-words {
+  font-size: 2.3vw;
+}
+  
 }
 
 
 /* --- Navbar --- */
 
 #navbar {
-  width: 100vw;
+  width: 100%;
   background-color: #607D8B;
   position: sticky;
   top: 0;
@@ -73,8 +92,8 @@ header {
 #navbar ul {
   list-style-type: none;
   overflow: hidden;
-  width: 100vw;
-  margin: 0vw auto;
+  width: 100%;
+  margin: 0 auto;
   background-color: #607D8B;
   display: flex;
   justify-content: center;
@@ -82,22 +101,24 @@ header {
 }
 
 #navbar li {
-  width: 10vw;
-  height: 2.9vw;
-  margin: 1.5vw;
+  width: 9vw;
+  height: 2.5vw;
+  margin: 1.2vw;
   float: left;
+  border-radius: 2px;
 }
 
 #navbar a {
   display: block;
-  width: 10vw;
-  height: 2.9vw;
-  line-height: 2.9vw;
+  width: 9vw;
+  height: 2.5vw;
+  line-height: 2.5vw;
   text-decoration: none;
   text-align: center;
   color: white;
-  font-size: 1.6vw;
+  font-size: 1.2vw;
   background-color: #181D27;
+  border-radius: 2px;
 }
 
 #navbar a:hover {
@@ -111,9 +132,29 @@ header {
   color: black
 }
 
+/* -- Navbar Media queries - Responsive on screens less than 900px wide -- */
+
+@media screen and (max-width: 900px) {
+  
+  #navbar li {
+  width: 13.5vw;
+  height: 5vw;
+  margin: 1.0vw;
+}
+
+#navbar a {
+  width: 13.5vw;
+  height: 5vw;
+  line-height: 5vw;
+  font-size: 2vw;
+}
+
+}
+
 /* --- Sections --- */
 
 .sections {
+  background-color: white;
   height: auto;
 }
 
@@ -123,9 +164,20 @@ header {
   background-color: #96ACB7;
   border-radius: 2PX;
   font-weight: normal;
-  font-size: x-large;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  font-size: 1.8vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 900px) {
+
+  .heading {
+  font-weight: normal;
+  font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 }
 
 /* -- About Section -- */
@@ -136,7 +188,6 @@ header {
   width: 70%; 
   height: auto;
 }
-
 
 .about-grid-row:after {
   content: "";
@@ -152,9 +203,10 @@ header {
 }
 
 .about-sub-heading {
+  background-color: #AAD2BA;
   font-weight: normal;
   font-size: large;
-  padding-top: 5px;
+  padding: 5px;
 }
 
 #dp {
@@ -162,17 +214,17 @@ header {
   height: 100%;
   border: 4px solid;
   border-radius: 2px;
-  border-color: grey;
+  border-color: #AAD2BA;
 }
 
 .about-info {
   font-size: small;
   color: grey;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  border-bottom: dashed;
-  border-width: thin;
+  padding: 5px;  
+  background-color: whitesmoke;
 }
+
+/* -- About Section Media queries - Responsive on screens less than 900px wide -- */
 
 @media screen and (max-width: 900px) {
   
@@ -206,10 +258,9 @@ header {
 }
 
 .hobby-img {
-  border: solid thick #AAD2BA;
+  border: solid #AAD2BA;
   width: 100%;
   height: 100%;
-
 }
 
 .hobby-info {
@@ -221,6 +272,7 @@ header {
   background-color: #181D27;
   font-weight: bold;
   border: black;
+  border-radius: 2px;
   color: white;  
   padding: 8px 5px;
 }
@@ -256,6 +308,7 @@ header {
   padding: 5px;
   font-size: small;
   color: grey;
+  background-color: whitesmoke;
 }
 
 /* - Education Timeline - /
@@ -298,7 +351,7 @@ header {
   border: 4px solid grey;
   top: 15px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 1; 
 }
 
 /* Place the container to the left */
@@ -346,8 +399,8 @@ header {
 
 /* The actual content */
 .edu-content {
-  padding: 20px 20px;
-  background-color: white;
+  padding: 8px 15px 16px 15px;
+  background-color: whitesmoke;
   position: relative;
   border: solid thin grey;
   border-radius: 6px;
@@ -363,18 +416,16 @@ header {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: white;
+  background-color: whitesmoke;
   border: solid thin grey;
   border-radius: 4px;
-  padding: 20px 20px;
+  padding: 8px 15px 16px 15px;
 }
 
-.container:hover .edu-overlay{
+.edu-content:hover .edu-overlay{
   opacity: 1;
 }
+
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 900px) {
@@ -436,6 +487,7 @@ header {
   padding: 5px;
   font-size: small;
   color: grey;
+  background-color: whitesmoke;
 }
 
 /* - Education Timeline - /
@@ -526,11 +578,31 @@ header {
 
 /* The actual content */
 .exp-content {
-  padding: 20px 20px;
-  background-color: white;
+  padding: 8px 15px 16px 15px;
+  background-color: whitesmoke;
   position: relative;
   border: solid thin grey;
   border-radius: 6px;
+}
+
+.exp-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: whitesmoke;
+  border: solid thin grey;
+  border-radius: 4px;
+  padding: 8px 15px 16px 15px;
+}
+
+.exp-container:hover .exp-overlay{
+  opacity: 1;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -566,29 +638,6 @@ header {
   }
 }
 
-.exp-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: white;
-  border: solid thin grey;
-  border-radius: 4px;
-  padding: 20px 20px;
-}
-
-.exp-container:hover .exp-overlay{
-  opacity: 1;
-}
-
 /* -- Skills Section -- */
 
 #skills {
@@ -612,13 +661,20 @@ header {
 
 
 .skill-img {
-  border: solid thick #AAD2BA;
+  border: solid #AAD2BA;
   width: 100%;
 }
 
 .skill-info {
   background-color: #AAD2BA;
-  font-size:1.5vw;
+  font-size:1.3vw;
+}
+
+@media screen and (max-width: 800px) {
+  
+  .skill-info {
+  font-size:2vw;
+}
 }
 
 /* --- Projects Section --- */
@@ -669,15 +725,26 @@ header {
   opacity: 1;
 }
 
+.project-container:hover .project-img {
+  opacity: 0.5;
+}
+
 .project-img {
-  border: solid thick #AAD2BA;
+  border: solid #AAD2BA;
   width: 100%;
   height: 100%;
 }
 
 .project-info {
   background-color: #AAD2BA;
-  font-size:1.5vw;
+  font-size:1.3vw;
+}
+
+@media screen and (max-width: 800px) {
+  
+ .project-info {
+  font-size:2vw;
+} 
 }
 
 .view-more-button {
@@ -691,6 +758,16 @@ header {
   font-size: 1vw;
   color: white;
   padding:0.5vw 1.5vw;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 900px) {
+
+  .overlay {
+  padding-top: 48%;
+  padding-bottom: 4%;
+}
+
 }
 
 /* --- Contact Section --- */
@@ -723,8 +800,10 @@ header {
 
 #downloadBtn {
   background-color: #181D27;
+  text-align: center;
   font-weight: bold;
   border: black;
+  border-radius: 2px;
   color: white;
   width: 200px;
   height:40px;
@@ -749,6 +828,7 @@ input[type=text], select, textarea {
 input[type=submit] {
   background-color: #181D27;
   border: black;
+  border-radius: 2px;
   font-weight: bold;
   color: white;
   padding: 12px 20px;

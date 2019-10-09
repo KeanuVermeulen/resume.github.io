@@ -10,7 +10,7 @@ $(window).scroll(function() {
       navH     = $('#navbar').height();
   $('.sections').each(function(i){
     var offT = $(this).offset().top;
-    if((offT-scrollPos-navH) <= 0) {
+    if((offT-scrollPos-navH) <= 20) {
       $('.active').removeClass('active')
       $('#navbar a').eq(i).addClass('active')
     }
@@ -83,6 +83,6 @@ var TxtType = function(el, toRotate, period) {
         // INJECT CSS
         var css = document.createElement("style");
         css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid black}";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid white}";
         document.body.appendChild(css);
     };
